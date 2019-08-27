@@ -4,6 +4,7 @@ using UnityEngine;
 public class ScoreText : MonoBehaviour
 {
     public Text scoreText;
+    public Text HighScore;
     public ChangeColor changer;
     public int score = 0;
     public bool Game = true;
@@ -12,6 +13,9 @@ public class ScoreText : MonoBehaviour
     private int randomIndex = 2;
     private int state = 2;
 
+    void Start() {
+        HighScore.text = PlayerPrefs.GetInt("HighScore", 0).ToString();
+    }
     void Update()
     {
         if (Game && FirstSpawned)
@@ -48,12 +52,18 @@ public class ScoreText : MonoBehaviour
     public void ScoreUpdate()
     {
         score++;
+        if (score > PlayerPrefs.GetInt("HighScore", 0))
+        {
+            PlayerPrefs.SetInt("HighScore", score);
+            HighScore.text = PlayerPrefs.GetInt("HighScore", 0).ToString();
+        }
         lol = false;
         randomIndex = Random.Range(0, 3);
         while (randomIndex == state)
         {
             randomIndex = Random.Range(0, 3);
         }
+
     }
 
     public void LolScore()
