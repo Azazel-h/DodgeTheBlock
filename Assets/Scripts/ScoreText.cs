@@ -66,6 +66,12 @@ public class ScoreText : MonoBehaviour
 
     }
 
+    public void PrefsReset() 
+    {
+        PlayerPrefs.DeleteAll();
+        HighScore.text = 0.ToString();
+        score = 0;
+    }
     public void LolScore()
     {
         if (score % 15 == 0 && score > 0)
