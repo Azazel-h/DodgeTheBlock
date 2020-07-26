@@ -1,6 +1,6 @@
 # DodgeTheBlock
 
-My first unity project in 2D
+My first unity project in 2D.
 It's a small game about dodging blocks, nothing special, just test project
 [GooglePlay Link](https://play.google.com/store/apps/details?id=com.YasuhiroCorp.DodgeTheBlock&hl=en)
 
