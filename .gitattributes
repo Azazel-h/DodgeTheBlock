@@ -1,0 +1,2 @@
+./Assets/** linguist-vendored
+./Assets/Scripts/** linguist-vendored=false
